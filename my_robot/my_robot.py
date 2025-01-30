@@ -4,18 +4,19 @@ from rclpy.node import Node
 
 class Mynode(Node):
     def __init__(self):
-        super().__init__("first_node")
+        super().__init__("first_Ros_node")
         self.create_timer(1,self.timer)
+        self.counter_= 0
         
 
     def timer(self):
 
-        self.get_logger().info("mmmmy_node")
+        self.get_logger().info("my_first_node")
 
 
 def main(args=None):
     rclpy.init(args=args)
-    node=Mynode()
+    node = Mynode()
     #continue to run and to keep the node alive
     rclpy.spin(node)
     rclpy.shutdown()
